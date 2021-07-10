@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import items from './articles'
+
+import '../src/styles/App.css';
+import Menu from './Components/Menu';
+import Button from './Components/Buttons';
 
 function App() {
+  const [menuItem, setMenuItem] = useState(items);
+  const [buttons, setButtons] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="title">
+        <h1>
+        Portfolio 
+          <span> Filter</span>
+        </h1>
+      </div>
+      <Button />
+      <Menu menuItem={menuItem} />
+    </>
   );
 }
 
